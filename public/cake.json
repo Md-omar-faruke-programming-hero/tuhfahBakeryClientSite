@@ -1,0 +1,85 @@
+[
+    {
+        "img":"https://i.ibb.co/HhJnF6g/cake1.jpg",
+        "name":"Butter Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":5,
+        "description":"Many a kid's birthday party is celebrated with a sheet-cake version of this dessert that's topped with billows of chocolate frosting and rainbow sprinkles. Yellow butter cakes often involve creaming the butter and sugar together (in modern times, this is done with an electric mixer) then adding the dry and wet ingredients, but there are also “dump” versions where all of the ingredients are thrown into a bowl and simply mixed together."
+        
+    },
+    {
+        "img":" https://i.ibb.co/jkWC5Vj/cake2.jpg",
+        "name":"Pound Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":5,
+        "description":"Named because it's made with a pound of each of the main ingredients (flour, butter, and sugar), this cake doesn’t rise much while baking, and the texture is very dense. Our version boasts matcha and cocoa powder, but classic recipes have nothing but vanilla extract to flavor it. Bake up one of these beauties in a loaf or Bundt pan."   
+    },
+    {
+        "img":" https://i.ibb.co/n7dpPKy/cake3.jpg",
+        "name":"Velvet Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":4,
+        "description":"This is a true favorite, especially in the south. Made with either butter or oil, red velvet cake's color classically comes from the reaction of buttermilk and cocoa powder. Modern versions often achieve this hue by using red food coloring, or in the case of the raspberry velvet cake, shown here, pink."
+    },
+    {
+        "img":"https://i.ibb.co/w4fLSwR/cake4.jpg",
+        "name":"Carrot Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":4,
+        "description":"Leavened with baking soda and baking powder, this shortened cake uses oil as its main fat rather than butter. The addition of grated carrots makes the cake extra moist. Carrot cake is also flavored with warm spices and frosted with a rich cream cheese frosting. Pecans or walnuts are optional!"
+
+    },
+    {
+        "img":" https://i.ibb.co/fFbPcfk/cake6.jpg",
+        "name":"Sponge Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":4.5,
+        "description":"This is a foam-style cake that has no artificial leaveners (baking powder or baking soda). It gets its volume solely from whipped eggs —either whole eggs or simply whites. This cake takes well to being soaked in a flavored syrup (try soaking with a lemon syrup and serve with a dollop of lemon curd), layered with whipped cream and smashed berries, or if baked up thin, rolled in the Christmas classic, Buche de Noel"
+    },
+    {
+        "img":"https://i.ibb.co/mzySzNQ/cake7.jpg",
+        "name":"Genoise Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":5,
+        "description":"Chiffon cake is a cross between a sponge and oil cake. The addition of oil gives it a richness similar to a shortened cake, and whipped egg whites and baking powder make it light and airy."
+    },
+    {
+        "img":"https://i.ibb.co/7zYjCgJ/cake8.jpg",
+        "name":"Chiffon Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":4.5,
+        "description":"The lightest of the light, angel food cake is made with only whipped egg whites for leavening and has no added fat. Baked in a special angel food cake pan, it’s often cooled upside down (in the pan) to help maintain the airy texture. The loads of sugar in an angel food cake give it a chewy and sponge-like texture."
+
+    },
+    {
+        "img":"https://i.ibb.co/xg8rMVC/cakke5.jpg",
+        "name":"Flourless Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":4.5,
+        "description":"This category includes both baked (think cheese cake or flourless chocolate) or unbaked (like mousse or unbaked cheesecakes) varieties. Typically very rich because of the high fat content, these cakes may or may not have a bottom crumb crust."
+    },
+    {
+        "img":"https://i.ibb.co/kgsnYp7/cake10.jpg",
+        "name":"Upside Down Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":5,
+        "description":"The classic version of this butter style cake is traditionally made with pineapple, but can be made with many varieties of fruits, including plums, peaches, blueberries, or pears. The toppings are spread on the bottom of the pan, often with butter and sugar, and then topped with cake batter. After cooking, the cake is turned out so that the fruit is facing up."
+    },
+    {
+        "img":"https://i.ibb.co/3Wd4KpY/cake9.jpg",
+        "name":"Devil’s Food Cake",
+        "price":5,
+        "pound":1.5,
+        "rating":4,
+        "description":"This cake is made 'devilish' by the addition of chocolate in the form of cocoa powder. Extra baking soda causes the crumb to have more air bubbles, giving it a light and airy texture. This rich cake is frosted with either chocolate frosting or buttercream."
+    }
+]

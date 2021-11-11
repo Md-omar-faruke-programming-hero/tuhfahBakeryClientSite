@@ -1,0 +1,15 @@
+.font{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+.img{
+    object-fit:"cover";
+    height: 300px;
+}
+@media only screen and (max-Width:698px) {
+    .img{
+        height: auto;
+        object-fit: cover;
+    }
+    
+}
