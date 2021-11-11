@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hook/useAuth';
-import logo from "../../../images/cakeLogo.png"
+import logo from "../../../images/cakeLogo.jpg"
 
 const Navigation = () => {
   const{user,logout}=useAuth()
@@ -22,7 +22,7 @@ const Navigation = () => {
               </li>
               <li className="nav-item">
                 
-                  <Link className="nav-link active" aria-current="page" to="/dashBoard">DashBoard</Link>
+                  <Link className="nav-link active" aria-current="page" to="/dashboard">DashBoard</Link>
               
               </li>
               <li className="nav-item">
