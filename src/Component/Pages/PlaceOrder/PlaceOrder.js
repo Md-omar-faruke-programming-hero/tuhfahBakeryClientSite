@@ -31,6 +31,7 @@ const PlaceOrder = (props) => {
         const cakeText= caketextRef.current.value;
         const area= areaRef.current.value;
         const address= addressRef.current.value
+        
 
         const userOrderInfo={
             cakeText:cakeText,area:area,address:address,
@@ -57,6 +58,9 @@ const PlaceOrder = (props) => {
                     button: "ok",
                     
                   });
+                  caketextRef.current.value="";
+                  areaRef.current.value="";
+                  addressRef.current.value=""
             }
         })
     }

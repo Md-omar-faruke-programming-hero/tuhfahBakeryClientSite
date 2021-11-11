@@ -7,6 +7,7 @@ import AuthProvider from './Component/Pages/AuthProvider/AuthProvider';
 import CakeDetails from './Component/Pages/CakeDetails/CakeDetails';
 import Home from './Component/Pages/Home/Home';
 import PrivateRoute from './Component/Pages/PrivateRoute/PrivateRoute';
+import Signup from './Component/Signup/Signup';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
 
           <Route  path="/login">
               <Login></Login>
+          </Route>
+          <Route  path="/signup">
+              <Signup></Signup>
           </Route>
 
         </Switch>
