@@ -24,6 +24,8 @@ const useFireBase=()=>{
         const newUser={email,displayName:name}
         setUser(newUser)
 
+        saveUser(newUser.email,newUser.displayName,"post")
+
         updateProfile(auth.currentUser, {
           displayName: name, 
           photoURL: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20190826%2Fourlarge%2Fpngtree-avatar-png-image_1696386.jpg&imgrefurl=https%3A%2F%2Fpngtree.com%2Ffreepng%2Favatar-user-profile--business-flat-line-filled-icon-vector-ban_4983900.html&tbnid=7qTfhtQPD0HrbM&vet=12ahUKEwi60oOa5o_0AhXOsksFHf_FAAkQMygsegUIARCGAg..i&docid=FLMpwoqxuvMMMM&w=640&h=640&q=user%20profile%20pic&ved=2ahUKEwi60oOa5o_0AhXOsksFHf_FAAkQMygsegUIARCGAg"
@@ -113,6 +115,21 @@ const useFireBase=()=>{
 
 
 
+    // save new user in db
+    const saveUser=(email,name,method)=>{
+      const newUser={email,name}
+
+      fetch('http://localhost:5000/alluser',{
+        method:method,
+        headers:{
+          "content-type":"application/json"
+        },
+        body:JSON.stringify(newUser)
+      })
+
+    }
+
+
 
 
 
@@ -124,7 +141,9 @@ const useFireBase=()=>{
         error,
         setloading,
         isLoading,
-        loginUser
+        loginUser,
+        saveUser
+        
         
 
     }

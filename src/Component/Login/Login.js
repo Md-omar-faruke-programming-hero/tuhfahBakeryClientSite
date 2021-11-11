@@ -6,7 +6,7 @@ import useAuth from '../../Hook/useAuth';
 import logo from "../../images/Group 573.png"
 import Navigation from '../Pages/Navigation/Navigation';
 const Login = () => {
-    const{loginUsingGoogle,setloading,error,loginUser}=useAuth()
+    const{loginUsingGoogle,setloading,error,loginUser,saveUser}=useAuth()
 
     const history=useHistory()
     const location=useLocation()
@@ -17,6 +17,7 @@ const Login = () => {
         .then((result) => {
               history.push(redirect_uri)  
             const user = result.user;
+            saveUser(user.email,user.displayName,"put")
             
         }).finally(()=>setloading(false))
     }
