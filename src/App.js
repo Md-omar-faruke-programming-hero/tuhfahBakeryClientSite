@@ -6,6 +6,7 @@ import Allproducts from './Component/Pages/Allproducts/Allproducts';
 import AuthProvider from './Component/Pages/AuthProvider/AuthProvider';
 import CakeDetails from './Component/Pages/CakeDetails/CakeDetails';
 import Home from './Component/Pages/Home/Home';
+import PrivateRoute from './Component/Pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -24,9 +25,9 @@ function App() {
               <Allproducts></Allproducts>
           </Route>
 
-          <Route  path="/cakeDetails/:id">
+          <PrivateRoute  path="/cakeDetails/:id">
               <CakeDetails></CakeDetails>
-          </Route>
+          </PrivateRoute>
 
           <Route  path="/login">
               <Login></Login>

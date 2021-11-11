@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link ,useHistory,useLocation} from 'react-router-dom';
 import useAuth from '../../Hook/useAuth';
 
 
@@ -7,6 +7,19 @@ import logo from "../../images/Group 573.png"
 import Navigation from '../Pages/Navigation/Navigation';
 const Login = () => {
     const{loginUsingGoogle}=useAuth()
+
+    const history=useHistory()
+    const location=useLocation()
+    const redirect_uri= location.state?.from || "/"
+
+    const loginUsingGoogle1=()=>{
+        loginUsingGoogle()
+        .then((result) => {
+              history.push(redirect_uri)  
+            const user = result.user;
+            
+        })
+    }
     return (
         <>
         <Navigation></Navigation>
@@ -26,7 +39,7 @@ const Login = () => {
                 </div> 
                 <div>
                     <p className="my-2 text-center">----------or----------</p>
-                    <button onClick={loginUsingGoogle} className="w-100 border px-5 rounded-pill btn btn-transplant"><img width="20px" className="me-5" src={logo} alt="" /> continue with google</button>
+                    <button onClick={loginUsingGoogle1} className="w-100 border px-5 rounded-pill btn btn-transplant"><img width="20px" className="me-5" src={logo} alt="" /> continue with google</button>
                 </div>
                 
             
