@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Rating from 'react-rating';
 import useAuth from '../../../Hook/useAuth';
+import swal from 'sweetalert';
 
 const PlaceOrder = (props) => {
 
@@ -26,18 +27,38 @@ const PlaceOrder = (props) => {
     
     const confirm=e=>{
         e.preventDefault()
-        const cakeTest= caketextRef.current.value;
+
+        const cakeText= caketextRef.current.value;
         const area= areaRef.current.value;
         const address= addressRef.current.value
 
         const userOrderInfo={
-            cakeTest:cakeTest,area:area,address:address,
+            cakeText:cakeText,area:area,address:address,
             weight:weight,cost:cost,name:name,email:user.email,
             img:img,status:"pending"
 
         }
         console.log(userOrderInfo)
         // send data to server
+
+        fetch('http://localhost:5000/user/order',{
+            method:"post",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(userOrderInfo)
+        }).then(res=>res.json())
+        .then(data=>{
+            if(data.insertedId){
+                swal({
+                    title: "Nice choice!",
+                    text: "we take your order!",
+                    icon: "success",
+                    button: "ok",
+                    
+                  });
+            }
+        })
     }
     
 

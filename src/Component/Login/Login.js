@@ -4,9 +4,13 @@ import useAuth from '../../Hook/useAuth';
 
 
 import logo from "../../images/Group 573.png"
+import Navigation from '../Pages/Navigation/Navigation';
 const Login = () => {
     const{loginUsingGoogle}=useAuth()
     return (
+        <>
+        <Navigation></Navigation>
+
         <div style={{height:"450px"}} className="d-flex flex-column justify-content-center align-items-center">
             <div className="card " style={{width: "20rem"}}>
                    <form action="">
@@ -27,6 +31,7 @@ const Login = () => {
                 
             
         </div>
+        </>
     );
 };
 

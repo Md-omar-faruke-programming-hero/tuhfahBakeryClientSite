@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hook/useAuth';
 import logo from "../../../images/cakeLogo.png"
 
 const Navigation = () => {
+  const{user,logout}=useAuth()
     return (
         <div>
              <nav className=" navbar navbar-expand-lg navbar-light bg-light">
@@ -34,7 +36,9 @@ const Navigation = () => {
               </li>
               <li className="nav-item">
                 
-                 <Link to="/login" className="nav-link ">Login</Link>
+                 {
+                   user.email? <button onClick={logout} className="btn btn-danger">log out</button> :<Link to="/login" className="nav-link ">Login</Link>
+                 }
                 
               </li>
             </ul>
