@@ -132,6 +132,15 @@ const useFireBase=()=>{
 
 
 
+    const[admin,setAdmin]=useState(false)
+    useEffect(()=>{
+      fetch(`http://localhost:5000/admin/${user.email}`)
+      .then(res=>res.json())
+      .then(data=>setAdmin(data.admin))
+    },[user.email])
+
+
+
 
     return{
         user,
@@ -142,7 +151,8 @@ const useFireBase=()=>{
         setloading,
         isLoading,
         loginUser,
-        saveUser
+        saveUser,
+        admin
         
         
 

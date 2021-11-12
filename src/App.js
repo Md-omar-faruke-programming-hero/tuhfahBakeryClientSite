@@ -38,9 +38,9 @@ function App() {
               <Signup></Signup>
           </Route>
 
-          <Route  path="/dashboard">
+          <PrivateRoute  path="/dashboard">
               <DashBoard></DashBoard>
-          </Route>
+          </PrivateRoute>
 
         </Switch>
       </BrowserRouter>
