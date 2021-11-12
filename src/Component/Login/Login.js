@@ -44,7 +44,7 @@ const Login = () => {
                    <form onSubmit={submit}>
                    <div className="card-body">
                         <h2 className="card-title">Please Login</h2>
-                    <input ref={emailRef} placeholder="name" className="form-control border-bottom border border-0 mb-4 " type="email" name="" id="1" />
+                    <input ref={emailRef} placeholder="email" className="form-control border-bottom border border-0 mb-4 " type="email" name="" id="1" />
                     <input ref={passRef} placeholder="password" className="form-control border-bottom border border-0 mb-5" type="password" name="" id="2" />
                         
                     <input className="btn w-100 btn-danger mb-2" type="submit" value="Submit" />

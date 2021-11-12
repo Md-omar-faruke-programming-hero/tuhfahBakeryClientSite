@@ -22,7 +22,9 @@ const Navigation = () => {
               </li>
               <li className="nav-item">
                 
-                  <Link className="nav-link active" aria-current="page" to="/dashboard">DashBoard</Link>
+                  {
+                    user.email && <Link className="nav-link active text-primary fw-bolder" aria-current="page" to="/dashboard">DashBoard</Link>
+                  }
               
               </li>
               <li className="nav-item">

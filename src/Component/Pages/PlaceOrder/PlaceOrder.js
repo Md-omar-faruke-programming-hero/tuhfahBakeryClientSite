@@ -41,7 +41,7 @@ const PlaceOrder = (props) => {
             img:img,status:"pending"
 
         }
-        console.log(userOrderInfo)
+       
         // send data to server
 
         fetch('http://localhost:5000/user/order',{

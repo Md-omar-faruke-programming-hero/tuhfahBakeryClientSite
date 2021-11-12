@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../Hook/useAuth';
 import swal from 'sweetalert';
+import { useHistory } from 'react-router-dom';
 
 
 const MyOrderList = () => {
@@ -53,10 +54,17 @@ const MyOrderList = () => {
             }
           });
     }
+    const history=useHistory()
+    const ok=()=>{
+        history.push('/allProducts')
+    }
 
     if(orders.length===0){
-        return <div style={{height:"500px"}} className="  d-flex justify-content-center  align-items-center">
-            <h3 className='text-center' >order list is empty, do order fast and get discount 😋 </h3>
+        return <div style={{height:"500px"}} className="  d-flex flex-column justify-content-center  align-items-center">
+            <h3 className='text-center' >order list is empty, do order fast and get discount 😋 </h3> <br />
+            <div className="text-center w-50">
+            <button onClick={ok} className="btn btn-primary w-25 ">ok</button>
+            </div>
         </div>
     }
     else{
@@ -65,11 +73,11 @@ const MyOrderList = () => {
                 <h1 className="text-center mb-5 font">My orders</h1>
                 <div className="row  mx-0 px-0 justify-content-center  align-items-center">
                     {
-                        orders.map(order=> <div key={order._id} className="col-md-5 mb-4 border col-12 p-3 ms-2">
+                        orders.map(order=> <div key={order._id} className="col-md-5 mb-4 border rounded-3 col-12 p-3 ms-2">
                         <div className="row mx-0 px-0">
                             <div className="col-md-6">
-                                 <img className="w-100 h-50" src={order.img} alt="" />
-                                 <h2 className="text-muted" >{order.name}</h2>
+                                 <img  style={{height:"110px",objectFit:"cover"}} className="w-100  " src={order.img} alt="" />
+                                 <h5 className="text-muted" >{order.name}</h5>
                                  <p>Delivery process: "<span className="text-danger">{order.status}</span>"</p>
                             </div>
                             <div className="col-md-6">
