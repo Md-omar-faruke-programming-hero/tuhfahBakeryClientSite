@@ -12,7 +12,7 @@ const Testmonial = () => {
     return (
         <div className="container my-5">
             <h3 className="text-center my-5">Testmonials</h3>
-            <div className="row">
+            <div className="row container justify-content-center align-items-center">
                 {
                     testmonial.map(test=> <div className="col-12 col-md-4 g-4 my-3" key={test._id}>
                     <div className="hover p-4">

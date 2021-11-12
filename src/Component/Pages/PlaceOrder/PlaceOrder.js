@@ -2,10 +2,12 @@ import React, { useRef, useState } from 'react';
 import Rating from 'react-rating';
 import useAuth from '../../../Hook/useAuth';
 import swal from 'sweetalert';
+import { useHistory } from 'react-router-dom';
 
 const PlaceOrder = (props) => {
 
     const{user}=useAuth()
+    const history= useHistory()
 
 
     const {name,img,price,description,rating,pound}=props.cake
@@ -61,7 +63,10 @@ const PlaceOrder = (props) => {
                   caketextRef.current.value="";
                   areaRef.current.value="";
                   addressRef.current.value=""
+                  history.push('/dashboard')
             }
+
+
         })
     }
     
