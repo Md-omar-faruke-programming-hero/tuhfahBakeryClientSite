@@ -20,7 +20,7 @@ const SellProduct = () => {
         history.push(`/cakeDetails/${id}`)
     }
     return (
-        <div className="container ">
+        <div className="container my-5 ">
             <h1 className="text-center">Check Out Our Best <span className="text-danger">selling</span> Cakes</h1>
             <div className="container mb-5 bg-light">
                 <div className="row mx-0 px-0 my-3">

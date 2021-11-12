@@ -26,7 +26,7 @@ const DashBoard = () => {
         <div>
              <nav className="navbar navbar-expand-lg navbar-light bg-light">
              
-               <div className="container-fluid">
+               <div className="container">
                
                     <button className="btn btn-danger ms-1" onClick={() => setShowDrawer(prevState => !prevState)} >
                     press
