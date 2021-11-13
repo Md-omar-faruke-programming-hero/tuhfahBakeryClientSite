@@ -6,6 +6,7 @@ import logo from "../../../images/cakeLogo.jpg"
 const Navigation = () => {
   const{user,logout}=useAuth()
     return (
+      
         <div>
              <nav className=" navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
