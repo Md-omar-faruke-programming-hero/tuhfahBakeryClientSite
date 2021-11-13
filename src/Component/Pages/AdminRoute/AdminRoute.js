@@ -3,9 +3,9 @@ import { Redirect, Route } from 'react-router';
 import useAuth from '../../../Hook/useAuth';
 
 const AdminRoute = ({children,...rest}) => {
-    const {user,admin}=useAuth()
+    const {user,admin,isLoading}=useAuth()
 
-    if( !admin){
+    if(!admin){
         return <div className="d-flex justify-content-center">
         <div className="spinner-border" role="status">
           <span className="visually-hidden">Loading...</span>

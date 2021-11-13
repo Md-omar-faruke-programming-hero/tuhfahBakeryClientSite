@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import Drawer from 'react-ui-drawer'
 import useAuth from '../../../Hook/useAuth';
 import logo from "../../../images/cakeLogo.jpg"
-import {Switch,Route,useRouteMatch} from "react-router-dom";
+import {Switch,Route,useRouteMatch,useHistory} from "react-router-dom";
 import MyOrderList from '../MyOrderList/MyOrderList';
 import Review from '../Review/Review';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../AdminRoute/AdminRoute';
 import AddAProduct from '../AddAProduct/AddAProduct';
+import ManageAllProducts from '../ManageAllProducts/ManageAllProducts';
 
 const DashBoard = () => {
     const [showDrawer, setShowDrawer] = useState(false)
@@ -17,8 +18,13 @@ const DashBoard = () => {
     const {logout}=useAuth()
 
     let { path, url } = useRouteMatch();
-
     
+    const history=useHistory()
+    const logout1=()=>{
+       logout()
+       history.push('/')
+
+    }
     
     return (
         <div>
@@ -44,12 +50,14 @@ const DashBoard = () => {
 
            <p className="text-center"> <Link to={`${url}/review`}><i className="far fa-comment-dots my-2 me-2"></i>Review</Link> </p>
 
-            <p className="text-center"><button onClick={logout}  className="w-100 btn btn-danger">logout</button></p>
+            <p className="text-center"><button onClick={logout1}  className="w-100 btn btn-danger">logout</button></p>
 
 
             <p className="text-center"> <Link to={`${url}/makeAdmin`}><i className="fas fa-user-shield my-2 me-2"></i>Make An Admin</Link> </p>
 
             <p className="text-center"> <Link to={`${url}/addProduct`}><i className="fas fa-plus my-2 me-2"></i>Added A Product</Link> </p> 
+
+            <p className="text-center"> <Link to={`${url}/manageProducts`}><i className="fas fa-tasks my-2 me-2"></i>Manage Products</Link> </p> 
             
                         </Drawer> 
                     )}
@@ -65,9 +73,14 @@ const DashBoard = () => {
                     <Route path={`${path}/review`}>
                        <Review></Review>
                     </Route>
-                    <Route path={`${path}/addProduct`}>
+
+                    <AdminRoute path={`${path}/addProduct`}>
                        <AddAProduct></AddAProduct>
-                    </Route>
+                    </AdminRoute>
+
+                    <AdminRoute path={`${path}/manageProducts`}>
+                       <ManageAllProducts></ManageAllProducts>
+                    </AdminRoute>
 
                     <AdminRoute path={`${path}/makeAdmin`}>
                        <MakeAdmin></MakeAdmin>
