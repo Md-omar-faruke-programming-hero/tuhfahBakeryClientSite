@@ -6,7 +6,7 @@ import "./SellProduct.css"
 const SellProduct = () => {
     const[cakes,setCakes]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/allCake')
+        fetch('https://murmuring-springs-43801.herokuapp.com/allCake')
         .then(res=>res.json())
         .then(data=>setCakes(data.slice(0,6)))
     },[])
@@ -19,7 +19,16 @@ const SellProduct = () => {
     const cakeDetails=(id)=>{
         history.push(`/cakeDetails/${id}`)
     }
-    return (
+
+    if(cakes.length=== 0){
+      return  <div className="d-flex justify-content-center">
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    }
+    else{
+      return (
         <div className="container my-5 ">
             <h1 className="text-center">Check Out Our Best <span className="text-danger">selling</span> Cakes</h1>
             <div className="container mb-5 bg-light">
@@ -57,6 +66,9 @@ const SellProduct = () => {
             
         </div>
     );
+
+    }
+    
 };
 
 export default SellProduct;

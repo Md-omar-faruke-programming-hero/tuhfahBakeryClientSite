@@ -8,7 +8,7 @@ import "./Allproducts.css"
 const Allproducts = () => {
     const[allCakes,setAllCake]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/allCake')
+        fetch('https://murmuring-springs-43801.herokuapp.com/allCake')
         .then(res=>res.json())
         .then(data=>setAllCake(data))
     },[])

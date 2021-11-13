@@ -7,7 +7,7 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 export default function ManageUsersOrderTable(props) {
     const[userOrder,setUserOrder]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/user/order')
+        fetch('https://murmuring-springs-43801.herokuapp.com/user/order')
         .then(res=>res.json())
         .then(data=>setUserOrder(data))
     },[])
@@ -23,7 +23,7 @@ export default function ManageUsersOrderTable(props) {
           })
           .then((willDelete) => {
             if (willDelete) {
-                fetch(`http://localhost:5000/user/order/${id}`,{
+                fetch(`https://murmuring-springs-43801.herokuapp.com/user/order/${id}`,{
                 method:"delete"
             }).then(res=>res.json())
             .then(data=>{
@@ -59,7 +59,7 @@ export default function ManageUsersOrderTable(props) {
                         status:"On processing",
                         paymentDate: new Date().toLocaleDateString()
                     }
-                    fetch(`http://localhost:5000/user/order/update/${id}`,{
+                    fetch(`https://murmuring-springs-43801.herokuapp.com/user/order/update/${id}`,{
                         method:"put",
                         headers:{
                             "content-type":"application/json"
@@ -114,7 +114,7 @@ export default function ManageUsersOrderTable(props) {
               <Td>{order.orderPlaceDate}</Td>
               <Td>{order.paymentDate}</Td>
               <Td>{order.status}</Td>
-              <Td><button onClick={()=>update(order._id)} className="btn btn-success me-1"><i class="fas fa-check-circle"></i></button><button onClick={()=>deleteProduct(order._id)} className="btn btn-danger">delete</button></Td>
+              <Td><button onClick={()=>update(order._id)} className="btn btn-success me-1"><i className="fas fa-check-circle"></i></button><button onClick={()=>deleteProduct(order._id)} className="btn btn-danger">delete</button></Td>
             </Tr>
             </Tbody>  )
       }

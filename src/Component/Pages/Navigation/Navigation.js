@@ -28,11 +28,9 @@ const Navigation = () => {
               
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/portfolio">Our Portfolio</Link>
+                <Link className="nav-link" to="/allProducts">SweetCorner</Link>
               </li>
-              <li className="nav-item">
-                <Link to="/team" className="nav-link ">Our Team</Link>
-              </li>
+              
               <li className="nav-item">
                 <Link to="/contact" className="nav-link ">Contact Us</Link>
               </li>

@@ -82,12 +82,12 @@ const useFireBase=()=>{
        return signInWithPopup(auth, provider)
            .catch((error) => {
                 // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
+                
+                
                 // The email of the user's account used.
-                const email = error.email;
+                
                 // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
+                
                 // ...
             }).finally(()=>setloading(false));
     }
@@ -120,7 +120,7 @@ const useFireBase=()=>{
     const saveUser=(email,name,method)=>{
       const newUser={email,name}
 
-      fetch('http://localhost:5000/alluser',{
+      fetch('https://murmuring-springs-43801.herokuapp.com/alluser',{
         method:method,
         headers:{
           "content-type":"application/json"
@@ -135,7 +135,7 @@ const useFireBase=()=>{
 
     const[admin,setAdmin]=useState(false)
     useEffect(()=>{
-      fetch(`http://localhost:5000/admin/${user.email}`)
+      fetch(`https://murmuring-springs-43801.herokuapp.com/admin/${user.email}`)
       .then(res=>res.json())
       .then(data=>setAdmin(data.admin))
     },[user.email])

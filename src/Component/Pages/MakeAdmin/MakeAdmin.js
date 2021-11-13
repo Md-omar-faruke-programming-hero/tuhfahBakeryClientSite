@@ -7,7 +7,7 @@ const MakeAdmin = () => {
     const makeAdmin=e=>{
         const email=emailRef.current.value
         const newAdmin={email}
-        fetch('http://localhost:5000/user/admin',{
+        fetch('https://murmuring-springs-43801.herokuapp.com/user/admin',{
             method:"put",
             headers:{
                 "content-type":"application/json"

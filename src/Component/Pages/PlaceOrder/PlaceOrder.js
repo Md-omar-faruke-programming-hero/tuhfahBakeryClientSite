@@ -44,7 +44,7 @@ const PlaceOrder = (props) => {
        
         // send data to server
 
-        fetch('http://localhost:5000/user/order',{
+        fetch('https://murmuring-springs-43801.herokuapp.com/user/order',{
             method:"post",
             headers:{
                 "content-type":"application/json"

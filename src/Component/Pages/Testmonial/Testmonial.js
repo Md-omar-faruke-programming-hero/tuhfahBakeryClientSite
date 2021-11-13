@@ -5,7 +5,7 @@ import Rating from 'react-rating';
 const Testmonial = () => {
     const[testmonial,setTestmonial]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/userReview')
+        fetch('https://murmuring-springs-43801.herokuapp.com/userReview')
         .then(res=>res.json())
         .then(data=>setTestmonial(data))
     },[])

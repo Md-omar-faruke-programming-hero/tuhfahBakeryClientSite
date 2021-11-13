@@ -8,7 +8,7 @@ const MyOrderList = () => {
     const{user}=useAuth()
     const [orders,setOrder]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/user/order?email=${user.email}`)
+        fetch(`https://murmuring-springs-43801.herokuapp.com/user/order?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>setOrder(data))
     },[user.email])
@@ -32,7 +32,7 @@ const MyOrderList = () => {
           })
           .then((willDelete) => {
             if (willDelete) {
-                fetch(`http://localhost:5000/user/order/${id}`,{
+                fetch(`https://murmuring-springs-43801.herokuapp.com/user/order/${id}`,{
                    method:"delete",
             })
             .then(res=>res.json())

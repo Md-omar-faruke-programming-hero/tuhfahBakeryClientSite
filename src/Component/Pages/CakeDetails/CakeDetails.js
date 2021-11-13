@@ -7,7 +7,7 @@ const CakeDetails = () => {
     const {id}=useParams()
     const[cakeDetails,setCakeDetails]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/cakeDetails/${id}`)
+        fetch(`https://murmuring-springs-43801.herokuapp.com/cakeDetails/${id}`)
         .then(res=>res.json())
         .then(data=>setCakeDetails(data))
     },[id])

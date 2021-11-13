@@ -24,7 +24,7 @@ const Review = () => {
             name,identity,review,img:user.photoURL,rating
         }
 
-        fetch('http://localhost:5000/userReview',{
+        fetch('https://murmuring-springs-43801.herokuapp.com/userReview',{
             method:"post",
             headers:{
                 "content-type":"application/json"

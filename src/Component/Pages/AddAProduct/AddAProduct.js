@@ -24,7 +24,7 @@ const AddAProduct = () => {
             img,name,price,rating,description,pound:1.5
         }
 
-        fetch('http://localhost:5000/addNweProduct',{
+        fetch('https://murmuring-springs-43801.herokuapp.com/addNweProduct',{
             method:"post",
             headers:{
                 "content-type":"application/json"

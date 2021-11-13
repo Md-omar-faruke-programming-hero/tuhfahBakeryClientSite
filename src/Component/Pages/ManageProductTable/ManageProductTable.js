@@ -7,7 +7,7 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 export default function ManageProductTable(props) {
     const[products,setProduct]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/allCake')
+        fetch('https://murmuring-springs-43801.herokuapp.com/allCake')
         .then(res=>res.json())
         .then(data=>setProduct(data))
     },[])
@@ -23,7 +23,7 @@ export default function ManageProductTable(props) {
           })
           .then((willDelete) => {
             if (willDelete) {
-                fetch(`http://localhost:5000/cakeDetails/${id}`,{
+                fetch(`https://murmuring-springs-43801.herokuapp.com/cakeDetails/${id}`,{
                 method:"delete"
             }).then(res=>res.json())
             .then(data=>{
