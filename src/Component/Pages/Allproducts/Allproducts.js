@@ -24,11 +24,13 @@ const Allproducts = () => {
               <img src={banner} className="img"  width="100%"  alt="" />
            </div>
            <h1 className="fontFamily text-center mt-3" >Looking For Something else <span className="text-danger">???</span></h1>
-           <div>
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button class="btn btn-outline-success" type="submit">Search</button>
+          <div className="d-flex align-items-center justify-content-center mb-5">
+          <div className="text-center w-25">
+              <input className="form-control " type="search" placeholder="Search" aria-label="Search"/>
+              <button className="btn btn-outline-success mt-3" type="submit">Search</button>
            </div>
-           <div className="container">
+          </div>
+           <div className="container mb-5">
                <div className="row mx-0 px-0">
                    {
                        allCakes.map(cake=><div key={cake._id} className="col-12 col-md-4 mt-3">

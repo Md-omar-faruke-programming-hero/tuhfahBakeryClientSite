@@ -18,7 +18,10 @@ const Testmonial = () => {
                     <div className="hover p-4">
                       <div className=" d-flex align-items-center justify-content-center">
                       <img src={test.img} className=" me-3 rounded-circle card-img-top w-25 " alt="..."/>
-                      <p className="font text-success fw-bolder">{test.name}. <br />{test.identity}.</p>
+                      <div>
+                      <p className="font text-success fw-bolder">{test.name}.</p>
+                      <p>{test.reviewDate}</p>
+                      </div>
                       </div>
                       <div  className="text-center card-body">
                       <Rating
