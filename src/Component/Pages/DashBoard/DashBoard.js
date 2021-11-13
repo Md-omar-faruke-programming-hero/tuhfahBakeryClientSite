@@ -11,11 +11,12 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../AdminRoute/AdminRoute';
 import AddAProduct from '../AddAProduct/AddAProduct';
 import ManageAllProducts from '../ManageAllProducts/ManageAllProducts';
+import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
 
 const DashBoard = () => {
     const [showDrawer, setShowDrawer] = useState(false)
     
-    const {logout}=useAuth()
+    const {logout,admin}=useAuth()
 
     let { path, url } = useRouteMatch();
     
@@ -43,21 +44,34 @@ const DashBoard = () => {
                         <Drawer requestClose={() => setShowDrawer(false)}>
              <p className="text-center mt-3"><img className="w-25 " src={logo} alt="" /></p> 
              <p className="text-center"><Link to="/"><i className="fas fa-home my-2 me-2"></i>Home</Link></p> 
-
+            
+            {
+               admin ?  <div>
+               <p className="text-center"> <Link to={`${url}/makeAdmin`}><i className="fas fa-user-shield my-2 me-2"></i>Make An Admin</Link> </p>
+   
+   <p className="text-center"> <Link to={`${url}/addProduct`}><i className="fas fa-plus my-2 me-2"></i>Added A Product</Link> </p> 
+   
+   <p className="text-center"> <Link to={`${url}/manageProducts`}><i className="fas fa-tasks my-2 me-2"></i>Manage Products</Link> </p> 
+   
+   <p className="text-center"> <Link to={`${url}/manageAllOrder`}><i className="fas fa-cart-plus my-2 me-2"></i>Manage Users Order</Link> </p>
+               </div> : <div>
             <p className="text-center"><Link to={`${url}`}><i className="fab fa-opencart my-2 me-2"></i>My Order list</Link> </p>
 
-            <p className="text-center"  ><Link to="/"><i className="far fa-credit-card my-2 me-2"></i>Payment</Link> </p>
+<p className="text-center"  ><Link to="/"><i className="far fa-credit-card my-2 me-2"></i>Payment</Link> </p>
 
-           <p className="text-center"> <Link to={`${url}/review`}><i className="far fa-comment-dots my-2 me-2"></i>Review</Link> </p>
+<p className="text-center"> <Link to={`${url}/review`}><i className="far fa-comment-dots my-2 me-2"></i>Review</Link> </p> 
+            </div>
+            }
+
+            
+
+           
 
             <p className="text-center"><button onClick={logout1}  className="w-100 btn btn-danger">logout</button></p>
 
 
-            <p className="text-center"> <Link to={`${url}/makeAdmin`}><i className="fas fa-user-shield my-2 me-2"></i>Make An Admin</Link> </p>
-
-            <p className="text-center"> <Link to={`${url}/addProduct`}><i className="fas fa-plus my-2 me-2"></i>Added A Product</Link> </p> 
-
-            <p className="text-center"> <Link to={`${url}/manageProducts`}><i className="fas fa-tasks my-2 me-2"></i>Manage Products</Link> </p> 
+             
+            
             
                         </Drawer> 
                     )}
@@ -67,7 +81,10 @@ const DashBoard = () => {
 
                <Switch>
                     <Route exact path={path}>
-                       <MyOrderList></MyOrderList>
+                       
+                       {
+                          admin ? <ManageAllOrder></ManageAllOrder>:<MyOrderList></MyOrderList>
+                       }
                     </Route>
 
                     <Route path={`${path}/review`}>
@@ -80,6 +97,10 @@ const DashBoard = () => {
 
                     <AdminRoute path={`${path}/manageProducts`}>
                        <ManageAllProducts></ManageAllProducts>
+                    </AdminRoute>
+
+                    <AdminRoute path={`${path}/manageAllOrder`}>
+                       <ManageAllOrder></ManageAllOrder>
                     </AdminRoute>
 
                     <AdminRoute path={`${path}/makeAdmin`}>

@@ -38,7 +38,7 @@ const PlaceOrder = (props) => {
         const userOrderInfo={
             cakeText:cakeText,area:area,address:address,
             weight:weight,cost:cost,name:name,email:user.email,
-            img:img,status:"pending"
+            img:img,status:"pending",customerName:user.displayName
 
         }
        

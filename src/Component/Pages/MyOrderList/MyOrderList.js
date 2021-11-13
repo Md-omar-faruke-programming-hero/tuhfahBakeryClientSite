@@ -70,7 +70,7 @@ const MyOrderList = () => {
     else{
         return (
             <div  className="container my-5">
-                <h1 className="text-center mb-5 font">My orders</h1>
+                <h1 className="text-center mb-5 font"> My Orders list</h1>
                 <div className="row  mx-0 px-0 justify-content-center  align-items-center">
                     {
                         orders.map(order=> <div key={order._id} className="col-md-5 mb-4 border rounded-3 col-12 p-3 ms-2">

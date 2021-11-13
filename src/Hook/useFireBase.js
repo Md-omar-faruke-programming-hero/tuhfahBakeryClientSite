@@ -28,7 +28,7 @@ const useFireBase=()=>{
 
         updateProfile(auth.currentUser, {
           displayName: name, 
-          photoURL: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20190826%2Fourlarge%2Fpngtree-avatar-png-image_1696386.jpg&imgrefurl=https%3A%2F%2Fpngtree.com%2Ffreepng%2Favatar-user-profile--business-flat-line-filled-icon-vector-ban_4983900.html&tbnid=7qTfhtQPD0HrbM&vet=12ahUKEwi60oOa5o_0AhXOsksFHf_FAAkQMygsegUIARCGAg..i&docid=FLMpwoqxuvMMMM&w=640&h=640&q=user%20profile%20pic&ved=2ahUKEwi60oOa5o_0AhXOsksFHf_FAAkQMygsegUIARCGAg"
+          photoURL: "https://i.ibb.co/H4GVX5X/download.jpg"
         }).then(() => {
          
         }).catch((error) => {
@@ -63,6 +63,7 @@ const useFireBase=()=>{
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+        console.log(user)
         const redirect_uri= location?.state?.from || "/"
         history.push(redirect_uri)
         

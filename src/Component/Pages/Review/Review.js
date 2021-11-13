@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import useAuth from '../../../Hook/useAuth';
 import swal from 'sweetalert';
+import { useHistory } from 'react-router-dom';
 
 
 const Review = () => {
@@ -12,6 +13,7 @@ const Review = () => {
     const reviewRef=useRef()
     const ratingRef=useRef()
 
+    const history=useHistory()
     const submitReview=e=>{
         e.preventDefault()
         const name=nameRef.current.value
@@ -41,6 +43,7 @@ const Review = () => {
                     button: "ok!",
                   });
             }
+            history.push('/')
         })
 
     }
