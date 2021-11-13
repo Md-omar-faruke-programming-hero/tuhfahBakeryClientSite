@@ -1,0 +1,21 @@
+.logo{
+    object-fit: cover;
+   width: 240px;
+    height: 100px;
+    
+   
+}
+
+@media only screen and (max-width:698px) {
+    .logo{
+        object-fit: cover;
+       width: 65px;
+       height: 50px;
+       margin-top: 15px;
+       
+       
+     
+    
+    
+    }
+}

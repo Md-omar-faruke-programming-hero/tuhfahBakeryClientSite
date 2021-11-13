@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Footer.css"
 
-import logo from "../../../images/cakeLogo.jpg"
+import logo from "../../../images/tuu.jpg"
 import payment from "../../../images/method.png"
 const Footer = () => {
     return (
@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="shadow bg-light ">
             <div className="row container mt-5 text-center">
             <div className="col-md-3 mt-5">
-              <img className="w-50 " src={logo} alt="" />
+              <img className="w-100 " src={logo} alt="" />
                 
                 <h4>Follow Use</h4>
                 <i className="facebook fab fa-facebook-square fa-2x me-3"></i>

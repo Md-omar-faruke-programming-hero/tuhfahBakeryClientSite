@@ -27,11 +27,11 @@ const ContactUs = () => {
             <div className="col-md-5 col-12 mx-auto">
                 <h4>Contact Details</h4>
                 <h5 className="fw-bolder">Phone:</h5>
-                <p className="text-muted">+123 4567 8910  <br />+88 0123 5465</p> <br />
+                <p className="text-muted">+01852-1265122   <br />+01852-1265122</p> <br />
                 <h5 className="fw-bolder">email:</h5>
-                <p className="text-muted">mail@example.com <br /> info@sitename.net</p> <br />
+                <p className="text-muted">info@example.com  <br /> support@example.com</p> <br />
                 <h5 className="fw-bolder">Address:</h5>
-                <p className="text-muted">29 Division Pt New York, NY 10002, USA</p>
+                <p className="text-muted">29 Division Pt Mouchak, NY 10002, Dhaka</p>
             </div>
 
         </div>
