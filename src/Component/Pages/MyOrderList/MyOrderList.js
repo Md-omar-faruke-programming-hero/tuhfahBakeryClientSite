@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../../Hook/useAuth';
 import swal from 'sweetalert';
 import { useHistory } from 'react-router-dom';
+import "./MyOrderList.css"
 
 
 const MyOrderList = () => {
@@ -61,7 +62,7 @@ const MyOrderList = () => {
 
     if(orders.length===0){
         return <div style={{height:"500px"}} className="  d-flex flex-column justify-content-center  align-items-center">
-            <h3 className='text-center' >order list is empty, do order fast and get discount 😋 </h3> <br />
+            <h3 className='text-center  ooo' >order list is empty, do order fast and get discount 😋 </h3> <br />
             <div className="text-center w-50">
             <button onClick={ok} className="btn btn-primary w-25 ">ok</button>
             </div>
