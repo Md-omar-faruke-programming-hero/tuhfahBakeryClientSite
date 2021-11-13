@@ -24,6 +24,10 @@ const Allproducts = () => {
               <img src={banner} className="img"  width="100%"  alt="" />
            </div>
            <h1 className="fontFamily text-center mt-3" >Looking For Something else <span className="text-danger">???</span></h1>
+           <div>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+              <button class="btn btn-outline-success" type="submit">Search</button>
+           </div>
            <div className="container">
                <div className="row mx-0 px-0">
                    {

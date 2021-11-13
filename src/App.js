@@ -8,6 +8,7 @@ import CakeDetails from './Component/Pages/CakeDetails/CakeDetails';
 import ContactUs from './Component/Pages/ContactUs/ContactUs';
 import DashBoard from './Component/Pages/DashBoard/DashBoard';
 import Home from './Component/Pages/Home/Home';
+import NotFound from './Component/Pages/NotFound/NotFound';
 import PrivateRoute from './Component/Pages/PrivateRoute/PrivateRoute';
 import Signup from './Component/Signup/Signup';
 
@@ -47,6 +48,11 @@ function App() {
           <PrivateRoute  path="/dashboard">
               <DashBoard></DashBoard>
           </PrivateRoute>
+
+          <Route  path="*">
+              <NotFound></NotFound>
+          </Route>
+
 
         </Switch>
       </BrowserRouter>
