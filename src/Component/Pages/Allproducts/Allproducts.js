@@ -10,13 +10,29 @@ const Allproducts = () => {
     useEffect(()=>{
         fetch('https://murmuring-springs-43801.herokuapp.com/allCake')
         .then(res=>res.json())
-        .then(data=>setAllCake(data))
+        .then(data=>{
+          setAllCake(data)
+
+          setSearch(data)
+        })
     },[])
 
     const history=useHistory()
     const cakeDetails=(id)=>{
             history.push(`/cakeDetails/${id}`)
     }
+
+const[search,setSearch]=useState([])
+
+    const serach=(e)=>{
+     const searchText=e.target.value
+     const match=allCakes.filter(allCake=> allCake.name.toLowerCase().includes(searchText.trim().toLowerCase()))
+
+     setSearch(match);
+
+
+    }
+
     return (
         <div>
             <Navigation></Navigation>
@@ -26,14 +42,14 @@ const Allproducts = () => {
            <h1 className="fontFamily text-center mt-3" >Looking For Something else <span className="text-danger">???</span></h1>
           <div className="d-flex align-items-center justify-content-center mb-5">
           <div className="text-center w-25">
-              <input className="form-control " type="search" placeholder="Search" aria-label="Search"/>
+              <input  onChange={serach} className="form-control " type="search" placeholder="Search" aria-label="Search"/>
               <button className="btn btn-outline-success mt-3" type="submit">Search</button>
            </div>
           </div>
            <div className="container mb-5">
                <div className="row mx-0 px-0">
                    {
-                       allCakes.map(cake=><div key={cake._id} className="col-12 col-md-4 mt-3">
+                       search.map(cake=><div key={cake._id} className="col-12 col-md-4 mt-3">
                        <div className="hover">
                         <div >
                         <img src={cake.img} height="200px" style={{objectFit:"cover"}} className="w-100  card-img-top rounded-3" alt="..."/>
