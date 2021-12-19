@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import banner from "../../../images/cakeBanner.jpg"
 import Navigation from '../Navigation/Navigation';
 import "./Allproducts.css"
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const Allproducts = () => {
     const[allCakes,setAllCake]=useState([])
@@ -34,6 +35,7 @@ const[search,setSearch]=useState([])
     }
 
     return (
+      <>
         <div>
             <Navigation></Navigation>
            <div> 
@@ -80,6 +82,8 @@ const[search,setSearch]=useState([])
 
             
         </div>
+        <MessengerCustomerChat pageId="103613898856785" appId="1810778465781165"/>
+        </>
     );
 };
 

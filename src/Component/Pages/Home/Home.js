@@ -5,6 +5,7 @@ import Navigation from '../Navigation/Navigation';
 import Offer from '../Offer/Offer';
 import SellProduct from '../SellProduct/SellProduct';
 import Testmonial from '../Testmonial/Testmonial';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Offer></Offer>
             <Testmonial></Testmonial>
             <Footer></Footer>
+            <MessengerCustomerChat pageId="103613898856785" appId="1810778465781165"/>
 
             
         </div>
