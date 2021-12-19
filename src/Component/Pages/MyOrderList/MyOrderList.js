@@ -14,13 +14,31 @@ const MyOrderList = () => {
         .then(data=>setOrder(data))
     },[user.email])
 
-    const payment=()=>{
-        swal({
-            title: "please wait!",
-            text: "this function will coming very soon!",
-            icon: "info",
-            button: "ok!",
-          });
+    const payment=(order)=>{
+
+        const customerOrder={
+            cus_name: user.displayName,
+            cus_email:user.email,
+            product_name:order?.name,
+            total_amount:order?.cost,
+        }
+        fetch('http://localhost:5000/init',{
+            method:"post",
+            headers:{
+                "content-type":"application/json"
+            },
+            body: JSON.stringify(customerOrder)
+        }).then(res=>res.json())
+        .then(data=>{
+            window.location.replace(data)
+        })
+        
+        // swal({
+        //     title: "please wait!",
+        //     text: "this function will coming very soon!",
+        //     icon: "info",
+        //     button: "ok!",
+        //   });
     }
     const cancleOrder=id=>{
 
@@ -88,7 +106,7 @@ const MyOrderList = () => {
                              <p>Payment on: ( " <span className="fw-bolder text-warning" >{order.paymentDate}</span> " )</p>
                            
                              <div className="text-end">
-                             <button onClick={payment} className="btn btn-success me-2">Pay</button>
+                             <button onClick={()=>payment(order)} className="btn btn-success me-2">Pay</button>
                              <button onClick={()=>cancleOrder(order._id)} className="btn btn-danger text-end">cancle</button>
                              </div>
                             </div>

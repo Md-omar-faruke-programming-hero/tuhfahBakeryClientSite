@@ -10,6 +10,7 @@ import DashBoard from './Component/Pages/DashBoard/DashBoard';
 import Home from './Component/Pages/Home/Home';
 import NotFound from './Component/Pages/NotFound/NotFound';
 import PrivateRoute from './Component/Pages/PrivateRoute/PrivateRoute';
+import PaymentSuccess from './Component/PaymentSuccess/PaymentSuccess';
 import Signup from './Component/Signup/Signup';
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
 
           <Route  path="/contact">
               <ContactUs></ContactUs>
+          </Route>
+          <Route  path="/success">
+              <PaymentSuccess></PaymentSuccess>
           </Route>
 
           <Route  path="/signup">
